@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ASIAN RESTAURANT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #B8D588; color: #e1d5c9; margin: 0; padding: 15px; }
+        .container { max-width: 500px; margin: auto; }
+        header { text-align: center; margin-bottom: 20px; padding: 20px; border-bottom: 2px solid #d4af37; background: linear-gradient(to bottom, #15301e, #0a1a0f); }
+        h1 { color: #d4af37; font-size: 22px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin: 0; }
+
+         /* Professional Icons Bar Styling */
+        .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 15px; }
+        .social-links a { color: #d4af37 !important; font-size: 28px; text-decoration: none; transition: 0.3s; display: inline-block; }
+        .social-links a:hover { color: #fff !important; transform: scale(1.2); }
+        .social-links i { font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important; font-weight: 900; font-style: normal; }
+        
+        .category-buttons-container { display: flex; overflow-x: auto; gap: 8px; padding: 10px 5px; margin-bottom: 25px; scrollbar-width: none; }
+        .category-buttons-container::-webkit-scrollbar { display: none; }
+
+        .category-btn { flex: 0 0 auto; width: 55px; height: 55px; background: #15301e; border: 1.5px solid #d4af37; border-radius: 50%; font-size: 8px; font-weight: bold; color: #d4af37; cursor: pointer; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px; }
+        .category-btn.active { background: #d4af37; color: #0a1a0f; }
+        
+        .item-list { display: none; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .item-list.active { display: grid; }
+        
+        .menu-card { background: #15301e; padding: 10px; border-radius: 15px; border: 1.5px solid #d4af37; text-align: center; }
+        .card-img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; border: 1px solid #d4af37; margin-bottom: 5px; }
+        .card-title { color: #f4f4f4; font-size: 11px; font-weight: bold; margin: 5px 0; height: 26px; overflow: hidden; }
+        .card-price { color: #d4af37; font-size: 12px; font-weight: bold; }
+    </style>
+  </head>
+<body>
+     <div class="container">
+        <header>
+            <h1>THE ASIAN RESTAURANT</h1>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/905350134798" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://maps.app.goo.gl/gbpR1VCrzER25fHf9" target="_blank"><i class="fa-solid fa-map-marker-alt"></i></a>
+            </div>
+        </header>
+
+        <!-- Dynamic Category Navigation Bar -->
+        <div class="category-buttons-container">
+            <button class="category-btn active" onclick="show('appetizer', this)">Appetizers</button>
+            <button class="category-btn" onclick="show('bbq', this)">BBQ & Grills</button>
+            <button class="category-btn" onclick="show('nashta', this)">Breakfast</button>
+            <button class="category-btn" onclick="show('chicken', this)">Chicken</button>
+            <button class="category-btn" onclick="show('mutton', this)">Beef & Mutton</button>
+            <button class="category-btn" onclick="show('sea', this)">Seafood</button>
+            <button class="category-btn" onclick="show('sabzi', this)">Veg & Bharta</button>
+            <button class="category-btn" onclick="show('daal', this)">Lentils (Daal)</button>
+            <button class="category-btn" onclick="show('rice', this)">Rice</button>
+            <button class="category-btn" onclick="show('noodles', this)">Noodles & Pasta</button>
+            <button class="category-btn" onclick="show('salad', this)">Salads</button>
+            <button class="category-btn" onclick="show('bread', this)">Breads</button>
+            <button class="category-btn" onclick="show('dessert', this)">Desserts</button>
+            <button class="category-btn" onclick="show('cold', this)">Cold Bev</button>
+            <button class="category-btn" onclick="show('hot', this)">Hot Bev</button>
+        </div>
+
+        <!-- 1. Appetizers, Snacks & Fast Food -->
+        <div id="appetizer" class="item-list active">
+            <div class="menu-card"><img src="https://i.ibb.co/Vcrhh0vy/CHICKEN-PAKORA.png" class="card-img"><div class="card-title">Chicken Pakora</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/DDXxqj9J/CHICKEN-SAMOSA.png" class="card-img"><div class="card-title">Chicken Samosa</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/zhrnWGs4/VEG-SAMOSA.png" class="card-img"><div class="card-title">Vegetable Samosa</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/nsdXXvyG/CHEESE-ROLL.png" class="card-img"><div class="card-title">Cheese Roll</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/gnN0Zmw/onion-rings.png" class="card-img"><div class="card-title">Onion Rings</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/LX52y5Fz/pani-puri.png" class="card-img"><div class="card-title">Pani Puri</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/HL42M3yP/chicken-sausage.png" class="card-img"><div class="card-title">Chicken Sausage</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/qYxtLNjX/NUGGETS.png" class="card-img"><div class="card-title">Nuggets</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/8DpyzPYT/FRIED-CHICKEN.png" class="card-img"><div class="card-title">KFC Fried Chicken</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/CpnVrY7b/FRENCH-FRIES.png" class="card-img"><div class="card-title">French Fries</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/tPsN1hC7/CHANNA-CHAAT.png" class="card-img"><div class="card-title">Chana Chaat</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/rG2GP0Fc/BURGER.png" class="card-img"><div class="card-title">Chicken Burger</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/rG2GP0Fc/BURGER.png" class="card-img"><div class="card-title">Beef Burger</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 2. Barbecue (BBQ) & Grills -->
+        <div id="bbq" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/39D07WM2/chicken-doner.jpg" class="card-img"><div class="card-title">Chicken Doner</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/8ghbmTFc/chicken-wings.jpg" class="card-img"><div class="card-title">Chicken Wings</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/Lz729p7F/Chicken-Skewers.jpg" class="card-img"><div class="card-title">Chicken Skewers</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/MyX2BwGt/beef-kofte.jpg" class="card-img"><div class="card-title">Chicken Kofta</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/MyX2BwGt/beef-kofte.jpg" class="card-img"><div class="card-title">Beef Kofta</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/7tJZ2RMd/beef-kebab.jpg" class="card-img"><div class="card-title">Chicken Kabab</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/7tJZ2RMd/beef-kebab.jpg" class="card-img"><div class="card-title">Beef Kabab</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1tL5vvnb/chicken-roast.jpg" class="card-img"><div class="card-title">Chicken Roast</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/rRD9Hn8q/bbq.jpg" class="card-img"><div class="card-title">BBQ</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/rRHZNp1G/chicken-tao.jpg" class="card-img"><div class="card-title">Chicken Tao</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 3. Breakfast & Parathas -->
+        <div id="nashta" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/bgxDmpfk/ALOO-PARATHA.png" class="card-img"><div class="card-title">Aloo Paratha</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/dscYfTbX/KEEMA-PARATHA.png" class="card-img"><div class="card-title">Chicken Keema Paratha</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/dscYfTbX/KEEMA-PARATHA.png" class="card-img"><div class="card-title">Keema Paratha</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/4Z622yQK/CHEESE-PARATHA.png" class="card-img"><div class="card-title">Cheese Paratha</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/k2P766Ft/CHEESE-EGG-PARATHA.png" class="card-img"><div class="card-title">Cheese Egg Paratha</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/tTbTtfcY/BUTTER-PARATHA.png" class="card-img"><div class="card-title">Plain Paratha</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1fFRT6mg/BOILED-EGG.png" class="card-img"><div class="card-title">Boiled Egg</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/0HgYrFd/EGG-BURJI.png" class="card-img"><div class="card-title">Egg Bhurji</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/n8V3XXQr/FULL-HALF-EGG-FRY.png" class="card-img"><div class="card-title">Egg Fry</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1YWchZkN/PLAIN-OMELETTE.png" class="card-img"><div class="card-title">Omelette</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/TBmmPr0M/TURKISH-TOAST.png" class="card-img"><div class="card-title">Turkish Toast</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/ymRdpHZM/HALWA-PURI.png" class="card-img"><div class="card-title">Halwa Puri</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 4. Chicken Dishes -->
+        <div id="chicken" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/S7DSFB2B/BUTTER-CHICKEN.png" class="card-img"><div class="card-title">Butter Chicken</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/xqcPPXkm/CHICKEN-QORMA.png" class="card-img"><div class="card-title">Chicken Qorma</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/zycjXDX/CHICKEN-HANDI.png" class="card-img"><div class="card-title">Special Chicken Karahi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/nNJxw0sy/WHITE-KADAI.png" class="card-img"><div class="card-title">White Chicken Karahi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/9HT9vPLd/KALI-MIRCH-KADAI.png" class="card-img"><div class="card-title">Black Pepper Chicken Karahi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/20QY5ZTn/PALAK-CHICKEN.png" class="card-img"><div class="card-title">Chicken Palak</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/CKb9j1Qb/CHICKEN-VANDALO.png" class="card-img"><div class="card-title">Chicken Curry</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 5. Beef & Mutton Dishes -->
+        <div id="mutton" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/mFthSpjN/MUTTON-KADAI.png" class="card-img"><div class="card-title">Mutton Karahi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/Y7xKS4F5/MUTTON-BLACK-PAPER.png" class="card-img"><div class="card-title">Black Pepper Mutton Karahi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1G0d9nW5/ALOO-KEEMA.png" class="card-img"><div class="card-title">Aloo Keema</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/mFthSpjN/MUTTON-KADAI.png" class="card-img"><div class="card-title">Beef Karahi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/JjpJD8TS/SPECIAL-BEEF-KARAHI.png" class="card-img"><div class="card-title">Special Beef Karahi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1G0d9nW5/ALOO-KEEMA.png" class="card-img"><div class="card-title">Keema Mattar</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 6. Seafood (Fish & Shrimp) -->
+        <div id="sea" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/5xnBNfX9/Mezgit-Fried-Fish.png" class="card-img"><div class="card-title">Mezgit Fried Fish</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1G3XCMRL/Hamsi-Fried-Fish.jpg" class="card-img"><div class="card-title">Hamsi Fried Fish</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/DH7dy3v9/istavrit-fish.png" class="card-img"><div class="card-title">Istavrit Fried Fish</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/2YFr8BXF/inekop-Fried-Fish.png" class="card-img"><div class="card-title">Çinekop Fried Fish</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/TfVbWTV/fish-fry.png" class="card-img"><div class="card-title">Fish Fry</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/QyPnVjZ/fish-kadai.png" class="card-img"><div class="card-title">Fish Karahi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/N62k25M6/shrim-kadai.png" class="card-img"><div class="card-title">Shrimp Fish Curry</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 7. Vegetarian Dishes, Bharta & Curries -->
+        <div id="sabzi" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/m3M5wR7/palak-bhaji.png" class="card-img"><div class="card-title">Palak Bhaji</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/YTpw27Kx/Aloo-Mattar-Paneer.png" class="card-img"><div class="card-title">Aloo Mattar Paneer</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/FbMq6qvn/same-bharta.jpg" class="card-img"><div class="card-title">Butter Paneer</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/jZkkcdxP/Aloo-Gobi.png" class="card-img"><div class="card-title">Aloo Gobi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/XkryQYxR/Aloo-Bharta.png" class="card-img"><div class="card-title">Aloo Bharta</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/h117jYnL/Chutki-Bharta.png" class="card-img"><div class="card-title">Chutki Bharta</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/FbMq6qvn/same-bharta.jpg" class="card-img"><div class="card-title">Same Bharta</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/LXwSGkQD/fish-bharta.jpg" class="card-img"><div class="card-title">Fish Bharta</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/ynSCS5TT/bengan-bharta.jpg" class="card-img"><div class="card-title">Bengan Bharta</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/kVp91qWk/egg-curry.jpg" class="card-img"><div class="card-title">Egg Curry</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/prf6xKkZ/channa-curry.jpg" class="card-img"><div class="card-title">Channa Curry</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/Ng086wXR/potato-bhaji.jpg" class="card-img"><div class="card-title">Potato Bhaji</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/h18wxcKf/aloo-palak.jpg" class="card-img"><div class="card-title">Aloo Palak</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/DPMkLhWD/aloo-tarkari.jpg" class="card-img"><div class="card-title">Aloo Tarkari</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/SD2btBBS/kadhi-pakora.jpg" class="card-img"><div class="card-title">Kadhi Pakora Special</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1YLLg02w/lady-finger-curry.jpg" class="card-img"><div class="card-title">Lady Finger Curry</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 8. Lentils (Daal) -->
+        <div id="daal" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/qFmtv7zy/DAAL-TADKA.png" class="card-img"><div class="card-title">Thin Daal</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/mFzPMwbB/DAAL-MASH.png" class="card-img"><div class="card-title">Daal Mash</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/xKSGqWY9/DAAL-CHANNA.png" class="card-img"><div class="card-title">Daal Channa</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 9. Rice -->
+        <div id="rice" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/M5BBcLMm/MUTTON-BIRYANI.png" class="card-img"><div class="card-title">Mutton Biryani</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/DD1Cr9Vv/EGG-BIRYANI.png" class="card-img"><div class="card-title">Egg Biryani</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/mMkpLBs/SHRIMP-BIRYANI.png" class="card-img"><div class="card-title">Shrimp Biryani</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1YHkv042/FISH-BIRYANI.png" class="card-img"><div class="card-title">Fish Biryani</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/TxxrCWXW/BIRYANI.png" class="card-img"><div class="card-title">Chicken Biryani</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/M5BBcLMm/MUTTON-BIRYANI.png" class="card-img"><div class="card-title">Beef Biryani</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/nqqKBQX2/EGG-RICE.png" class="card-img"><div class="card-title">Egg Fried Rice</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/39SFCtmT/CHICKEN-FRIED-RICE.png" class="card-img"><div class="card-title">Chicken Fried Rice</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/NgJBbKLn/PLAIN-BIRYANI-RICE.png" class="card-img"><div class="card-title">Pulao Rice</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/8gjrFxWv/KABULI-ULAO.png" class="card-img"><div class="card-title">Kabuli Pulao</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/yF2b2SBf/PLAIN-RICE.png" class="card-img"><div class="card-title">Plain Rice</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 10. Noodles & Pasta -->
+        <div id="noodles" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/ghj5BPk/CHICKEN-CHOW-MEIN.png" class="card-img"><div class="card-title">Chicken Chow Mein</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/HDGPTZHn/SHRIMP-CHOW-MEIN.png" class="card-img"><div class="card-title">Shrimp Chow Mein</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/gZKntVyh/VEG-CHOW-MEIN.jpg" class="card-img"><div class="card-title">Vegetable Chow Mein</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/Gftt98DM/PASTA.jpg" class="card-img"><div class="card-title">Pasta</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 11. Salads -->
+        <div id="salad" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/svdW2qgN/INDIAN-SALAD.png" class="card-img"><div class="card-title">Indian Salad</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/wFGtJzPS/GREEN-SALAD.png" class="card-img"><div class="card-title">Arabic Salad</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/CKjn2hL9/KUCHUMBER-SALAD.png" class="card-img"><div class="card-title">Turkish Salad</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 12. Breads -->
+        <div id="bread" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/rG1fd962/NAAN.png" class="card-img"><div class="card-title">Naan</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/k26303wS/ROTI-1.png" class="card-img"><div class="card-title">Chapati Roti</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 13. Desserts -->
+        <div id="dessert" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/wr8P6YTY/ZARDA.png" class="card-img"><div class="card-title">Zarda</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/m556hfSP/SEVIYAN.png" class="card-img"><div class="card-title">Seviyan</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 14. Cold Drinks & Beverages -->
+        <div id="cold" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/1GMHv7rR/FRESH-ORANGE-JUICE.png" class="card-img"><div class="card-title">Mango Lassi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/XZ18NYvh/LASSI.png" class="card-img"><div class="card-title">Banana Lassi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/XZ18NYvh/LASSI.png" class="card-img"><div class="card-title">Plain Lassi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/1GMHv7rR/FRESH-ORANGE-JUICE.png" class="card-img"><div class="card-title">Orange Juice</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/j9ST9yXY/FRESH-POMOGRANATE-JUICE.png" class="card-img"><div class="card-title">Pomegranate Juice</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/pB1CvLYB/AYRAN.webp" class="card-img"><div class="card-title">Ayran</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/YF6KpJyG/JUST-POWER.jpg" class="card-img"><div class="card-title">Just Power (Small / Big)</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/zCdVd8x/COCA-COLA.jpg" class="card-img"><div class="card-title">Coca Cola</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/TBmr6RVD/PEPSI.avif" class="card-img"><div class="card-title">Pepsi</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/Nny1gxLT/SPRITE.png" class="card-img"><div class="card-title">Sprite</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/F4B0LjyR/REDBULL.png" class="card-img"><div class="card-title">Red Bull</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/wNfcvQQv/WATER-BOTTLE.png" class="card-img"><div class="card-title">Water</div><div class="card-price">$5</div></div>
+        </div>
+
+        <!-- 15. Hot Drinks -->
+        <div id="hot" class="item-list">
+            <div class="menu-card"><img src="https://i.ibb.co/Fb9LrwS8/CAPPUCCINO.png" class="card-img"><div class="card-title">Coffee</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/x8SjTVy7/BLACK-COFFEE.png" class="card-img"><div class="card-title">Black Coffee</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/Fb9LrwS8/CAPPUCCINO.png" class="card-img"><div class="card-title">Cappuccino</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/vK6C2Sv/DOODH-PATTI.png" class="card-img"><div class="card-title">Special Coffee</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/vK6C2Sv/DOODH-PATTI.png" class="card-img"><div class="card-title">Special Chai</div><div class="card-price">$5</div></div>
+            <div class="menu-card"><img src="https://i.ibb.co/N6ZZRg2R/BLACK-TEA.png" class="card-img"><div class="card-title">Red Tea</div><div class="card-price">$5</div></div>
+        </div>
+    </div>
+
+    <script>
+        function show(id, btn) {
+            document.querySelectorAll('.item-list').forEach(div => div.style.display = 'none');
+            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).style.display = 'grid';
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>
